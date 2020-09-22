@@ -9,7 +9,7 @@ pikselit = image.load()
 width, height = image.size
 
 f = open(tallenna,'w')
-f.write("(" + str(w) + ")(" + str(h) + ")")
+f.write("(" + str(width) + ")(" + str(height) + ")")
 
 for y in range(height):
     for x in range(width):
