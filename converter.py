@@ -3,19 +3,10 @@ import os
 
 kuva = input("open picture: ")
 tallenna = input("Save as: ")
-w = 32
-h = 24
 clean = []
 image = Image.open(kuva)
 pikselit = image.load()
 width, height = image.size
-
-if not width == w or height == h:
-    print("Warning resizing for further processing!")
-    image2 = image.resize((w, h))
-    image2.save("pythonkuva.png")
-    pikselit = image2.load()
-    width, height = image2.size
 
 f = open(tallenna,'w')
 f.write("(" + str(w) + ")(" + str(h) + ")")
@@ -26,10 +17,8 @@ for y in range(height):
         r = str(info[0])
         g = str(info[1])
         b = str(info[2])
-        clean = ( '#%02x%02x%02x' % (int(r), int(g), int(b))).split("#")
-        #print("(0x" + clean[1]+ ")")
-        data = "(0x" + clean[1]+ ")"
+        clean = ( '#%02x%02x%02x' % (int(r), int(g), int(b))).split("#") # the conversion from rgb to hex
+        data = "(0x" + clean[1]+ ")" # add (0x value )
         f.write(data)
 f.close()
-os.remove("pythonkuva.png")
 print("completed")
