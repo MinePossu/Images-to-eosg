@@ -2,13 +2,13 @@ from PIL import Image
 import os
 
 picture = input("open picture: ")
-tallenna = input("Save as: ")
+saveas = input("Save as: ")
 clean = []
 image = Image.open(picture)
 pikselit = image.load()
 width, height = image.size
 
-f = open(tallenna,'w')
+f = open(saveas,'w')
 f.write("(" + str(width) + ")(" + str(height) + ")")
 
 for y in range(height):
