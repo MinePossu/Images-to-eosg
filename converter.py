@@ -1,10 +1,10 @@
 from PIL import Image
 import os
 
-kuva = input("open picture: ")
+picture = input("open picture: ")
 tallenna = input("Save as: ")
 clean = []
-image = Image.open(kuva)
+image = Image.open(picture)
 pikselit = image.load()
 width, height = image.size
 
