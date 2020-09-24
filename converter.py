@@ -11,7 +11,7 @@ except:
     print("Could not open image. Usage ...py image.jpg saveas.txt")
     sys.exit()
 
-    pixels = image.load()
+pixels = image.load()
 width, height = image.size
 
 f = open(saveas,'w')
