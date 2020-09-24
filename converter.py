@@ -1,11 +1,17 @@
 from PIL import Image
-import os
+import sys
 
-picture = input("open picture: ")
-saveas = input("Save as: ")
+picture = str(sys.argv[1])
+saveas = str(sys.argv[2])
 clean = []
-image = Image.open(picture)
-pixels = image.load()
+
+try:
+    image = Image.open(picture)
+except:
+    print("Could not open image. Usage ...py image.jpg saveas.txt")
+    sys.exit()
+
+    pixels = image.load()
 width, height = image.size
 
 f = open(saveas,'w')
