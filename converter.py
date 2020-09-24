@@ -5,7 +5,7 @@ picture = input("open picture: ")
 saveas = input("Save as: ")
 clean = []
 image = Image.open(picture)
-pikselit = image.load()
+pixels = image.load()
 width, height = image.size
 
 f = open(saveas,'w')
@@ -13,7 +13,7 @@ f.write("(" + str(width) + ")(" + str(height) + ")")
 
 for y in range(height):
     for x in range(width):
-        info = pikselit[x, y]
+        info = pixels[x, y]
         r = str(info[0])
         g = str(info[1])
         b = str(info[2])
